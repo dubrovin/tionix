@@ -182,7 +182,8 @@ class EmployeeFactory(object):
             emails_list = [emp.contact_info for emp in expired_emp]
             sender.send_message(emails_list)
             sender.disconnect()
-            print "emails was send to \n".join(emails_list)
+            print "emails was send to:"
+            print " ".join(emails_list)
 
 
 class Cli(cmd.Cmd):
