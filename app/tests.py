@@ -5,14 +5,14 @@ from tionix import EmailSender, Employee, EmployeeFactory, Cli
 class TestEmailSender(unittest.TestCase):
 
     def test_connect(self):
-        sender = EmailSender("dubrovin.ruslan", "Heckfy93")
+        sender = EmailSender("sender.user", "password")
         sender.connect()
         # server response code (e.g. '250', or such, if all goes well)
         self.assertEquals(sender.server.noop()[0], 250,
                           "bad response from server")
 
     def test_send_message(self):
-        sender = EmailSender("dubrovin.ruslan", "Heckfy93")
+        sender = EmailSender("sender.user", "password"
         sender.connect()
         # server response code (e.g. '250', or such, if all goes well)
         self.assertEquals(sender.server.noop()[0], 250,
@@ -23,7 +23,7 @@ class TestEmailSender(unittest.TestCase):
         self.assertEquals(resp, {}, "bad response from server")
 
     def test_disconnect(self):
-        sender = EmailSender("dubrovin.ruslan", "Heckfy93")
+        sender = EmailSender("sender.user", "password"
         sender.connect()
         # server response code (e.g. '250', or such, if all goes well)
         self.assertEquals(sender.server.noop()[0], 250,
